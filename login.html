@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Captcha +</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+  <form action="auth.php" method="POST">
+    <p>E-mail:
+      <input type="text" name="email" size="20" maxlength="10" required>
+    </p>
+
+    <p>Senha:
+      <input type="password" name="pw" size="6" maxlength="6" required>
+    </p>
+    <div class="g-recaptcha" data-sitekey="6LeDLOIfAAAAAM9kmtuQk83JlKoE5oCrokA-sQ9R"></div>
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+  <script type="text/javascript">
+    function validar() {
+      if (grecaptcha.getResponse() == "") {
+        alert("Valide o reCAPTCHA!")
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>'
